@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Pantry Item</title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+
+  <h1>Add a New Item to <%= user.username %>'s Pantry</h1>
+
+  <form action="/users/<%= user._id %>/foods" method="POST">
+    <label for="name">Item Name:</label>
+    <input type="text" name="name" id="name" required />
+
+    <label for="quantity">Quantity (optional):</label>
+    <input type="text" name="quantity" id="quantity" />
+
+    <button type="submit">Save Item</button>
+  </form>
+
+  <p><a href="/users/<%= user._id %>/foods">← Back to Pantry</a></p>
+</body>
+</html>
